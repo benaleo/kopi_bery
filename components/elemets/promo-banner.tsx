@@ -1,12 +1,19 @@
 "use client"
 import * as React from 'react';
+import Image from 'next/image';
 import {motion, Variants} from "motion/react";
 
 export default function PromoBanner() {
     return (
         <div className="w-full py-6">
             <div className="relative container-lg overflow-hidden mx-auto">
-                <img className="w-full h-[200px] object-cover rounded-lg shadow" src="/assets/images/banner.png" alt="promo banner"/>
+                <Image
+                    className="w-full h-[200px] object-cover rounded-lg shadow"
+                    src="/assets/images/banner.png"
+                    alt="promo banner"
+                    width={1920}
+                    height={200}
+                />
                 <motion.div
                     variants={cardVariants}
                     initial="offscreen"

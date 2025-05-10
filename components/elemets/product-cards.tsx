@@ -1,5 +1,6 @@
 "use client"
 import * as React from 'react';
+import Image from 'next/image';
 import {motion, Variants} from "motion/react"
 
 interface Props {
@@ -16,7 +17,13 @@ export default function ProductCards({children, title, href, alt}: Props) {
             initial="offscreen"
             whileInView="onscreen"
             className="flex flex-col items-center">
-            <img className="w-full max-w-[300px] aspect-square object-cover" src={href !== null ? href : "/assets/images/coffee-1.png"} alt={alt}/>
+            <Image
+                className="w-full max-w-[300px] aspect-square object-cover"
+                src={href !== null ? href : "/assets/images/coffee-1.png"}
+                alt={alt || "coffee"}
+                width={300}
+                height={300}
+            />
             <p className="text-2xl font-bold text-primary">
                 {title}
             </p>

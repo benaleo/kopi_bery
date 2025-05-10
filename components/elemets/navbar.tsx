@@ -4,8 +4,9 @@ import {useEffect, useState} from 'react';
 import Link from "next/link";
 import {Dialog, DialogContent, DialogContentMenuMobile, DialogDescription, DialogHeader, DialogTitle, DialogTrigger} from "@/components/ui/dialog";
 import {FaAlignJustify} from "react-icons/fa6";
+import Image from "next/image";
 
-export default function __Navbar() {
+export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
@@ -23,7 +24,13 @@ export default function __Navbar() {
                 <div className={`w-[80vw] h-16 sticky left-[10vw] top-4 rounded-md transition-all duration-300 ${isScrolled ? 'bg-slate-900 bg-opacity-100 outline outline-1 outline-slate-50' : 'bg-slate-50 bg-opacity-50'}`}>
                     <div className="relative h-full">
                         <div className="absolute z-10 flex justify-between items-center w-full h-full px-4 md:px-12">
-                            <img className={`object-contain h-16 filter ${isScrolled ? 'brightness-0 invert' : 'brightness-0 invert'}`} src="/assets/images/logo.svg" alt="logo kopi bery"/>
+                            <Image
+                                className={`object-contain h-16 filter ${isScrolled ? 'brightness-0 invert' : 'brightness-0 invert'}`}
+                                src="/assets/images/logo.svg"
+                                alt="logo kopi bery"
+                                width={100}
+                                height={64}
+                            />
                             <div className="hidden md:flex items-center justify-center gap-12">
                                 <Link className={`nav-menu ${isScrolled ? 'text-slate-50' : 'text-white'}`} href="/">Home</Link>
                                 <Link className={`nav-menu ${isScrolled ? 'text-slate-50' : 'text-white'}`} href="/menu">Menu</Link>
