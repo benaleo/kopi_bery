@@ -74,7 +74,6 @@ export function OrderForm() {
     fetchData();
   }, []);
 
-  console.log(menus)
 
   async function onSubmit(formData: z.infer<typeof formSchema>) {
     setLoading(true);
@@ -112,7 +111,7 @@ export function OrderForm() {
                   <_ZodInput control={form.control} name={`orders[${index}].orderId`} labelName="OrderId" placeholder="Input orderId" />
                 </div>
                 {/* Product Field */}
-                <_ZodSelect control={form.control} name={`orders[${index}].productId`} title="pesanan" placeholder="Pilih pesanan" datas={menus} form={form} />
+                <_ZodSelect control={form.control} name={`orders[${index}].productId`} title="pesanan" placeholder="Pilih pesanan" datas={menus || []} form={form} />
                 {/* Button Remove */}
                 <motion.button
                   whileTap={{ scale: 0.9 }}

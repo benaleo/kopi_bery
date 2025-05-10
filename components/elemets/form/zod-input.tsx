@@ -10,13 +10,11 @@ type Props = {
     placeholder?: string;
     type?: string;
     disabled?: string;
-    className?: string
 };
 export default function _ZodInput(props: Props) {
-    const {control, name, labelName, placeholder, type, disabled, className} = props;
+    const {control, name, labelName, placeholder, type, disabled} = props;
     return (
         <FormField
-            className={className}
             control={control}
             name={name}
             render={({field}) => (

@@ -45,7 +45,7 @@ export default function _ZodStringCheckbox(props: Props) {
                                                 ? field.onChange([...field.value, item.value])
                                                 : field.onChange(
                                                     field.value?.filter(
-                                                        (value) => value !== item.value
+                                                        (value: string) => value !== item.value
                                                     )
                                                 )
                                         }}

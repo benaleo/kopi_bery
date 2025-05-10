@@ -31,7 +31,7 @@ export default function _ZodInputImage(props: Props) {
                 return () => URL.revokeObjectURL(objectUrl); // Cleanup URL untuk menghindari memory leak
             }
         } else {
-            setPreview(currentImage); // Jika tidak ada file, hapus preview
+            setPreview(currentImage || null); // Jika tidak ada file, hapus preview
         }
     }, [watchedFile, currentImage]);
 

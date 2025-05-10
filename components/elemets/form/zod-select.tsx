@@ -7,14 +7,16 @@ import {cn} from "@/lib/utils";
 import {Check, ChevronsUpDown} from "lucide-react";
 import {Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList} from "@/components/ui/command";
 import {Input} from "@/components/ui/input";
+import { SelectOptions } from "@/types/SelectOptions";
 
 type Props = {
     control: any;
     name: string;
     labelName?: string;
     placeholder?: string;
+    title?: string;
     description?: string;
-    datas: { label: string, value: number | string, address: string , location: string}[];
+    datas: SelectOptions[];
     form: any;
     disabled?: boolean;
     onChange?: (value: any) => void;
@@ -90,7 +92,7 @@ export default function _ZodSelect(props: Props) {
                                                         >
                                                             {isCustomer ? (
                                                                 <>
-                                                                    <b>{data.label}</b> {" - "} [{data.location}] {" - "} {data.address}
+                                                                    <b>{data.label}</b>
                                                                 </>
                                                             ):(
                                                                 <>

@@ -21,7 +21,7 @@ export default function _ZodInputArea({control, name, labelName, placeholder, di
                     <FormLabel>{labelName}</FormLabel>
                     <FormControl>
                         <Textarea
-                            disabled={disabled}
+                            disabled={!!disabled}
                             placeholder={placeholder}
                             {...field}
                         />
