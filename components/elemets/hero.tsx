@@ -1,5 +1,6 @@
 "use client"
 import * as React from 'react';
+import Image from 'next/image';
 import {motion} from "motion/react"
 
 export default function Hero() {
@@ -90,11 +91,11 @@ export default function Hero() {
                         }
                     }}
                     className="absolute top-1/2 md:top-1/2 lg:top-52 right-[25vw] md:right-[37vw]  lg:right-48">
-                    <img className="object-contain h-52 filter brightness-0 invert" src="/assets/images/logo.svg" alt="logo kopi bery"/>
+                    <Image className="object-contain h-52 filter brightness-0 invert" src="/assets/images/logo.svg" alt="logo kopi bery" width={200} height={208} />
                 </motion.div>
 
             </div>
-            <img className="w-full h-full object-cover" src="/assets/images/hero.png" alt="hero kopi bery"/>
+            <Image className="w-full h-full object-cover" src="/assets/images/hero.png" alt="hero kopi bery" fill />
         </div>
     );
 };
